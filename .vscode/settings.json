@@ -1,8 +1,9 @@
 {
-	"files.associations": {
-		"*.ejs": "html",
-		"iostream": "cpp",
-		"ostream": "cpp",
-		"new": "cpp"
-	}
+  "files.associations": {
+    "*.ejs": "html",
+    "iostream": "cpp",
+    "ostream": "cpp",
+    "new": "cpp",
+    "*.tcc": "cpp"
+  }
 }
