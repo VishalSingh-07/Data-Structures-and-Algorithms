@@ -17,9 +17,9 @@ class Tree
             void RInorder(Node *p);
            
 
-            void ItPreorder(Node *p);
-            void ItPostorder(Node *p);
-            void ItInorder(Node *p);
+            void IPreorder(Node *p);
+            void IPostorder(Node *p);
+            void IInorder(Node *p);
             void Levelorder(Node *p);
 };
 
@@ -96,26 +96,45 @@ void Tree :: RPostorder(Node *p)
 
 // Iterative Approach
 
-void Tree :: ItPreorder(Node *p)
+void Tree :: IPreorder(Node *p)
 {
-      if(p!=NULL)
+      Stack stk(100);
+      
+      while(p!=NULL || !stk.isEmptyStack())
       {
-            cout<<p->data<<" ";
-            ItPreorder(p->lchild);
-            ItPreorder(p->rchild);
+            if(p!=NULL)
+            {
+                  cout<<p->data<<" ";
+                  stk.push(p);
+                  p=p->lchild;
+            }
+            else
+            {
+                  p=stk.pop();
+                  p=p->rchild;
+            }
       }
 }
-void Tree :: ItInorder(Node *p)
+void Tree :: IInorder(Node *p)
 {
-      if(p!=NULL)
+      Stack stk(100);
+      
+      while(p!=NULL || !stk.isEmptyStack())
       {
-            
-            ItInorder(p->lchild);
-            cout<<p->data<<" ";
-            ItInorder(p->rchild);
+            if(p!=NULL)
+            {
+                  stk.push(p);
+                  p=p->lchild;
+            }
+            else
+            {
+                  p=stk.pop();
+                  cout<<p->data<<" ";
+                  p=p->rchild;
+            }
       }
 }
-void Tree :: ItPostorder(Node *p)
+void Tree :: IPostorder(Node *p)
 {
       Stack stk1(100),stk2(100);
       stk1.push(p); // Push the root node onto stk1
@@ -191,15 +210,15 @@ int main()
       cout<<"\n--------Iterative Approach -----"<<endl;
 
       cout<<"Preorder of the created Tree: ";
-      t.ItPreorder(t.root);
+      t.IPreorder(t.root);
       cout<<endl;
 
       cout<<"Postorder of the created Tree: ";
-      t.ItPostorder(t.root);
+      t.IPostorder(t.root);
       cout<<endl;
 
       cout<<"Inorder of the created Tree: ";
-      t.ItInorder(t.root);
+      t.IInorder(t.root);
       cout<<endl;
 
 
