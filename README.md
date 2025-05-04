@@ -77,9 +77,11 @@ I will review your pull request as soon as possible. Thank you for contributing!
 
 If you have any questions, suggestions, or feedback, feel free to reach out:
 
+```
 Email: vishalsinghagr25@example.com
-<br>
+
 GitHub: VishalSingh-07
+```
 
 
 Happy Coding! 🚀 
